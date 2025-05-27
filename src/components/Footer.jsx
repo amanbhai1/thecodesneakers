@@ -39,7 +39,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold mb-2">Contact</h4>
             <div className="space-y-2 text-gray-400">
-              <p><b>Address:</b> Sikandra Rao, Hathras, Uttar Pradesh, 204215</p>
+              <p><b>Address:</b> Mathura, Uttar Pradesh, 281004</p>
               <p><b>Phone:</b> +91 7451936566</p>
               <p><b>Email:</b> thecodesneakers@gmail.com</p>
             </div>
