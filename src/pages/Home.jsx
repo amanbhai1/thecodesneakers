@@ -235,7 +235,7 @@ const Home = () => {
               name: "Krish Bhardawaj",
               role: "Co-Founder & CTO",
               experience: `Expert in crafting engaging and responsive UI using React.js. Focused on user experience and design consistency across projects.`,
-              image: "/Assets/team-member-03.jpg",
+              image: "/Assets/team3.jpg",
               expertise: ["React Ecosystem", "Performance Optimization", "WebGL"],
               linkedinLink: "https://www.linkedin.com/in/krishbhardawaj"
             },
@@ -251,7 +251,7 @@ const Home = () => {
               name: "Tanishka",
               role: "Co-Founder & COO", 
               experience: `Contributed to UI development and helped enhance user experience with modern design practices and clean code.`,
-              image: "/Assets/team-member-07.jpg",
+              image: "/Assets/team4.jpg",
               expertise: ["Project Management", "Client Relations", "Agile Workflows"],
               linkedinLink: "https://www.linkedin.com/in/tanishka"
             },
