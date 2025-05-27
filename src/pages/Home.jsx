@@ -161,13 +161,13 @@ const Home = () => {
             {[
               { 
                 title: 'Starter', 
-                price: '₹49k', 
+                price: '₹3999', 
                 features: ['Basic Website', '3 Revisions', 'SEO Setup', '1 Month Support'],
                 borderColor: 'border-gray-800'
               },
               { 
                 title: 'Professional', 
-                price: '₹99k', 
+                price: '₹9999', 
                 features: ['Custom Software', 'UI/UX Design', 'Digital Marketing', '3 Months Support'],
                 borderColor: 'border-primary/40',
                 popular: true
@@ -225,11 +225,10 @@ const Home = () => {
             {
               name: "Aman Gupta",
               role: "Founder & CEO",
-              experience: `Led backend development for 'RoutePulse' and 'Grow Together' projects. Skilled in building secure REST APIs and cloud infrastructure. Over 2 years of experience in full-stack development with MERN stack.`,
+              experience: `As the Founder of The Code Sneakers, I’m passionate about turning innovative ideas into powerful digital solutions. With a background in full-stack development and a vision for smart, scalable technology, I lead a team dedicated to crafting web, mobile, AI, and IT products that help businesses grow and thrive. My mission is to blend creativity with cutting-edge tech to deliver seamless experiences that make a real impact.`,
               image: "/Assets/aman.jpg",
               expertise: ["Node.js", "Cloud Architecture", "AI Integration"],
-              projectsLink: "https://github.com/amanbhai1",
-              linkedinLink: "https://www.linkedin.com/in/amangupta-a11a672ab/"
+              linkedinLink: "https://www.linkedin.com/in/aman-gupta-a11a672ab/"
             },
             {
               name: "Krish Bhardawaj",
@@ -237,7 +236,7 @@ const Home = () => {
               experience: `Expert in crafting engaging and responsive UI using React.js. Focused on user experience and design consistency across projects.`,
               image: "/Assets/team3.jpg",
               expertise: ["React Ecosystem", "Performance Optimization", "WebGL"],
-              linkedinLink: "https://www.linkedin.com/in/krishbhardawaj"
+              linkedinLink: "https://www.linkedin.com/in/krishbharadwaj23/"
             },
             {
               name: "Vikash Shakaya",
@@ -245,7 +244,7 @@ const Home = () => {
               experience: `Designed intuitive interfaces and enhanced interactive features for various projects, ensuring seamless user experience.`,
               image: "/Assets/vikash.jpg",
               expertise: ["UX Research", "Design Systems", "Motion Design"],
-              linkedinLink: "https://www.linkedin.com/in/vikashshakaya"
+              linkedinLink: "https://www.linkedin.com/in/vikash-shakya-978a052b2/"
             },
             {
               name: "Tanishka",
@@ -253,7 +252,7 @@ const Home = () => {
               experience: `Contributed to UI development and helped enhance user experience with modern design practices and clean code.`,
               image: "/Assets/team4.jpg",
               expertise: ["Project Management", "Client Relations", "Agile Workflows"],
-              linkedinLink: "https://www.linkedin.com/in/tanishka"
+              linkedinLink: "https://www.linkedin.com/in/tanishka-varshney-349366272/"
             },
             // ... other team members
           ].map((member, index) => (
