@@ -31,7 +31,7 @@ const Home = () => {
     <div className="min-h-screen bg-[#0f0f0f] overflow-hidden">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-black via-[#0f0f0f] to-primary/20 overflow-hidden">
-        <div className="absolute inset-0 opacity-20 bg-[url('/Assets/noise.png')]" />
+        <div className="absolute inset-0 opacity-20 bg-[url('/Assets/aman.png')]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#3b82f620_0%,transparent_70%)] animate-pulse" />
         
         <motion.div 
