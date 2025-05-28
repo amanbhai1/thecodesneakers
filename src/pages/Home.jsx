@@ -244,7 +244,7 @@ const Home = () => {
             },
             {
               name: "Krish Bhardawaj",
-              role: "Co-Founder & CTO",
+              role: "Co-Founder",
               experience: `Expert in crafting engaging and responsive UI using React.js. Focused on user experience and design consistency across projects.`,
               image: "/Assets/team3.jpg",
               expertise: ["React Ecosystem", "Performance Optimization", "WebGL"],
@@ -252,7 +252,7 @@ const Home = () => {
             },
             {
               name: "Vikash Shakaya",
-              role: "Co-Founder & CDO",
+              role: "Co-Founder",
               experience: `Co-founder of The Code Sneakers, Vikash is a skilled MERN Stack Developer with 50+ projects built and 200+ students mentored. He combines technical expertise with creative problem-solving to deliver impactful web experiences and leads with a mission to make coding exciting and accessible for all.`,
               image: "/Assets/vikash.jpg",
               expertise: ["MERN Stack Developer", "Mentor", "Innovator"],

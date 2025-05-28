@@ -7,6 +7,7 @@ const SuccessStories = () => {
       description: "Scaled infrastructure to handle 10M+ monthly transactions",
       results: ["300% Performance boost", "99.9% Uptime", "AWS Architecture"],
       client: "FashionTech Inc"
+      
     },
     {
       title: "AI-Powered Healthcare System",
