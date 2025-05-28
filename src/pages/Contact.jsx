@@ -212,8 +212,8 @@ const Contact = () => {
         />
         <div className="absolute bottom-8 left-8 right-8 bg-gradient-to-r from-primary/20 to-cyan-400/10 backdrop-blur-lg p-6 rounded-2xl border border-gray-800/50">
           <h3 className="text-xl font-semibold mb-4">Our Headquarters</h3>
-          <p className="text-gray-400">Innovation Valley, Tech Street 123</p>
-          <p className="text-gray-400">New Delhi, India</p>
+          <p className="text-gray-400">The Code Sneaker's, Mathura</p>
+          <p className="text-gray-400">Uttar Pradesh, India</p>
         </div>
       </div>
 
