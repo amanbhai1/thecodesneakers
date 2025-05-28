@@ -11,6 +11,7 @@ import Career from './pages/Career';
 import Testimonials from './pages/Testimonials';
 import Industries from './pages/Industries';
 import SuccessStories from './pages/SuccessStories';
+import FAQ from './pages/Faq.jsx';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/project" element={<Projects />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<About />} />
+        <Route path="/faq" element={<FAQ />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/industries" element={<Industries />} />
