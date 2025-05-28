@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { 
+import {
   FaCode as Code,
   FaLaptopCode as LaptopCode,
   FaPalette as Palette,
@@ -33,8 +33,8 @@ const Home = () => {
       <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-black via-[#0f0f0f] to-primary/20 overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('/Assets/aman.png')]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#3b82f620_0%,transparent_70%)] animate-pulse" />
-        
-        <motion.div 
+
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           className="max-w-screen-2xl mx-auto px-4 text-center relative z-10"
@@ -76,7 +76,7 @@ const Home = () => {
       <section className="relative py-24 md:py-32 bg-gradient-to-b from-[#0a0a0a] to-[#111111]">
         <div className="absolute inset-0 bg-[url('/Assets/grid.svg')] opacity-10" />
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-5xl lg:text-6xl font-bold text-center mb-12 md:mb-20 bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -87,7 +87,7 @@ const Home = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {coreServices.map((service, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -136,9 +136,9 @@ const Home = () => {
             </div>
             <div className="relative group mt-8 md:mt-0">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-3xl transform group-hover:rotate-1 transition-all duration-500" />
-              <img 
-                src="/Assets/services.jpg" 
-                alt="Services" 
+              <img
+                src="/Assets/services.jpg"
+                alt="Services"
                 className="rounded-3xl w-full h-[400px] md:h-[500px] object-cover grayscale group-hover:grayscale-0 transition-all"
               />
             </div>
@@ -148,83 +148,83 @@ const Home = () => {
 
       {/* Service Packages */}
       <div className="relative bg-black py-24 md:py-32">
-  <div className="max-w-7xl mx-auto px-4 md:px-8">
-    <div className="text-center mb-12 md:mb-16">
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-        Tailored Solutions
-      </h2>
-      <p className="text-gray-400/90 max-w-2xl mx-auto md:text-lg">
-        Flexible packages designed for businesses at every stage
-      </p>
-    </div>
-    <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-      {[
-        { 
-          title: 'Starter', 
-          price: '₹3999', 
-          features: ['Basic Website', '3 Revisions', 'SEO Setup', '1 Month Support'],
-          borderColor: 'border-gray-800'
-        },
-        { 
-          title: 'Professional', 
-          price: '₹9999', 
-          features: ['Custom Software', 'UI/UX Design', 'Digital Marketing', '3 Months Support'],
-          borderColor: 'border-primary/40',
-          popular: true
-        },
-        { 
-          title: 'Enterprise', 
-          price: 'Custom', 
-          features: ['Full Solution', 'Priority Support', 'Dedicated Team', 'Ongoing Maintenance'],
-          borderColor: 'border-gray-800'
-        }
-      ].map((pkg, index) => (
-        <motion.div 
-          key={index}
-          className={`p-6 md:p-8 bg-dark-secondary/50 rounded-xl md:rounded-2xl border ${pkg.borderColor} hover:border-primary/40 transition-all relative`}
-          whileHover={{ scale: 1.02 }}
-          viewport={{ once: true }}
-        >
-          {pkg.popular && (
-            <div className="absolute top-0 right-0 bg-primary text-white px-3 py-1 rounded-bl-lg rounded-tr-lg text-xs md:text-sm">
-              Most Popular
-            </div>
-          )}
-          <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{pkg.title}</h3>
-          <div className="text-3xl md:text-4xl font-bold text-primary mb-4">{pkg.price}</div>
-          <ul className="space-y-2 md:space-y-3 mb-6 md:mb-8">
-            {pkg.features.map((feature, i) => (
-              <li key={i} className="flex items-center gap-2 text-gray-300 text-sm md:text-base">
-                <FaCheck className="text-primary text-xs md:text-sm" />
-                {feature}
-              </li>
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+              Tailored Solutions
+            </h2>
+            <p className="text-gray-400/90 max-w-2xl mx-auto md:text-lg">
+              Flexible packages designed for businesses at every stage
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+            {[
+              {
+                title: 'Starter',
+                price: '₹3999',
+                features: ['Basic Website', '3 Revisions', 'SEO Setup', '1 Month Support'],
+                borderColor: 'border-gray-800'
+              },
+              {
+                title: 'Professional',
+                price: '₹9999',
+                features: ['Custom Software', 'UI/UX Design', 'Digital Marketing', '3 Months Support'],
+                borderColor: 'border-primary/40',
+                popular: true
+              },
+              {
+                title: 'Enterprise',
+                price: 'Custom',
+                features: ['Full Solution', 'Priority Support', 'Dedicated Team', 'Ongoing Maintenance'],
+                borderColor: 'border-gray-800'
+              }
+            ].map((pkg, index) => (
+              <motion.div
+                key={index}
+                className={`p-6 md:p-8 bg-dark-secondary/50 rounded-xl md:rounded-2xl border ${pkg.borderColor} hover:border-primary/40 transition-all relative`}
+                whileHover={{ scale: 1.02 }}
+                viewport={{ once: true }}
+              >
+                {pkg.popular && (
+                  <div className="absolute top-0 right-0 bg-primary text-white px-3 py-1 rounded-bl-lg rounded-tr-lg text-xs md:text-sm">
+                    Most Popular
+                  </div>
+                )}
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{pkg.title}</h3>
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-4">{pkg.price}</div>
+                <ul className="space-y-2 md:space-y-3 mb-6 md:mb-8">
+                  {pkg.features.map((feature, i) => (
+                    <li key={i} className="flex items-center gap-2 text-gray-300 text-sm md:text-base">
+                      <FaCheck className="text-primary text-xs md:text-sm" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <button
+                  className="w-full bg-primary/10 hover:bg-primary/20 text-primary py-2 md:py-3 rounded-lg transition-all text-sm md:text-base"
+                  onClick={() => {
+                    const message = encodeURIComponent(
+                      `Hi, I'm interested in the ${pkg.title} Plan (${pkg.price}) for ${pkg.features.join(', ')}.`
+                    );
+                    window.open(`https://instagram.com/thecodesneakers`, '_blank');
+                    navigator.clipboard.writeText(decodeURIComponent(message)).then(() => {
+                      alert("Message copied! Paste it into Instagram DM.");
+                    });
+                  }}
+                >
+                  Get Started
+                </button>
+              </motion.div>
             ))}
-          </ul>
-          <button
-            className="w-full bg-primary/10 hover:bg-primary/20 text-primary py-2 md:py-3 rounded-lg transition-all text-sm md:text-base"
-            onClick={() => {
-              const message = encodeURIComponent(
-                `Hi, I'm interested in the ${pkg.title} Plan (${pkg.price}) for ${pkg.features.join(', ')}.`
-              );
-              window.open(`https://instagram.com/thecodesneakers`, '_blank');
-              navigator.clipboard.writeText(decodeURIComponent(message)).then(() => {
-                alert("Message copied! Paste it into Instagram DM.");
-              });
-            }}
-          >
-            Get Started
-          </button>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</div>
+          </div>
+        </div>
+      </div>
 
 
       {/* Team Section */}
       <div className="relative bg-gradient-to-b from-[#0a0a0a] to-[#111111] py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-5xl lg:text-6xl font-bold text-center mb-16 md:mb-20 bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -253,14 +253,14 @@ const Home = () => {
             {
               name: "Vikash Shakaya",
               role: "Co-Founder & CDO",
-              experience: `Designed intuitive interfaces and enhanced interactive features for various projects, ensuring seamless user experience.`,
+              experience: `Co-founder of The Code Sneakers, Vikash is a skilled MERN Stack Developer with 50+ projects built and 200+ students mentored. He combines technical expertise with creative problem-solving to deliver impactful web experiences and leads with a mission to make coding exciting and accessible for all.`,
               image: "/Assets/vikash.jpg",
-              expertise: ["UX Research", "Design Systems", "Motion Design"],
+              expertise: ["MERN Stack Developer", "Mentor", "Innovator"],
               linkedinLink: "https://www.linkedin.com/in/vikash-shakya-978a052b2/"
             },
             {
               name: "Tanishka Varshney",
-              role: "Co-Founder & COO", 
+              role: "Co-Founder & COO",
               experience: `Contributed to UI development and helped enhance user experience with modern design practices and clean code.`,
               image: "/Assets/team4.jpg",
               expertise: ["Project Management", "Client Relations", "Agile Workflows"],
@@ -268,7 +268,7 @@ const Home = () => {
             },
             // ... other team members
           ].map((member, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               className={`flex flex-col ${index % 2 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 md:gap-12 mb-16 md:mb-24 last:mb-0`}
               initial={{ opacity: 0, x: index % 2 ? 100 : -100 }}
@@ -278,7 +278,7 @@ const Home = () => {
             >
               {/* Image Section */}
               <div className="md:w-1/2 relative group overflow-hidden rounded-2xl md:rounded-3xl">
-                <motion.img 
+                <motion.img
                   src={member.image}
                   className="w-full h-[300px] md:h-[400px] object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                   alt={member.name}
@@ -287,7 +287,7 @@ const Home = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 z-10 flex gap-2 flex-wrap">
                   {member.expertise?.map((skill, i) => (
-                    <span 
+                    <span
                       key={i}
                       className="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs md:text-sm backdrop-blur-sm"
                     >
@@ -299,7 +299,7 @@ const Home = () => {
 
               {/* Content Section */}
               <div className="md:w-1/2 flex flex-col justify-center space-y-4 md:space-y-6">
-                <motion.span 
+                <motion.span
                   className="text-primary font-semibold text-lg md:text-xl"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
@@ -307,8 +307,8 @@ const Home = () => {
                 >
                   {member.role}
                 </motion.span>
-                
-                <motion.h2 
+
+                <motion.h2
                   className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
@@ -316,8 +316,8 @@ const Home = () => {
                 >
                   {member.name}
                 </motion.h2>
-                
-                <motion.p 
+
+                <motion.p
                   className="text-gray-400 text-base md:text-lg leading-relaxed"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
@@ -326,14 +326,14 @@ const Home = () => {
                   {member.experience}
                 </motion.p>
 
-                <motion.div 
+                <motion.div
                   className="flex gap-4 md:gap-6 mt-6"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ delay: 0.5 }}
                 >
                   {member.projectsLink && (
-                    <motion.a 
+                    <motion.a
                       href={member.projectsLink}
                       className="flex items-center gap-2 text-primary hover:text-cyan-400 transition-colors"
                       whileHover={{ x: 5 }}
@@ -343,7 +343,7 @@ const Home = () => {
                     </motion.a>
                   )}
                   {member.linkedinLink && (
-                    <motion.a 
+                    <motion.a
                       href={member.linkedinLink}
                       className="flex items-center gap-2 text-primary hover:text-cyan-400 transition-colors"
                       whileHover={{ x: 5 }}
@@ -362,7 +362,7 @@ const Home = () => {
       {/* CTA Section */}
       <section className="relative py-24 md:py-32 bg-gradient-to-br from-black to-primary/20">
         <div className="max-w-screen-xl mx-auto px-4 text-center">
-          <motion.div 
+          <motion.div
             className="space-y-8 md:space-y-12"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
