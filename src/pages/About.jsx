@@ -9,25 +9,25 @@ const About = () => {
     { 
       img: '/Assets/aman.jpg', 
       name: 'Aman Gupta', 
-      role: 'Founder & Lead Developer',
+      role: 'Founder & CEO',
       bio: 'MERN Stack expert driving innovation in every build'
     },
     { 
       img: '/Assets/vikash.jpg', 
       name: 'Vikash Shakya', 
-      role: 'Co-Founder & Frontend Expert',
+      role: 'Co-Founder & CDO',
       bio: 'Crafting visually stunning interfaces'
     },
     { 
       img: '/Assets/team3.jpg', 
       name: 'Krish Bhardwaj', 
-      role: 'Co-Founder & UI/UX Designer',
+      role: 'Co-Founder & CTO',
       bio: 'Transforming complexity into elegant experiences'
     },
     { 
       img: '/Assets/team4.jpg', 
-      name: 'Tanishka', 
-      role: 'Co-Founder & Project Manager',
+      name: 'Tanishka Varshney', 
+      role: 'Co-Founder & COO',
       bio: 'Ensuring flawless execution & delivery'
     }
   ];

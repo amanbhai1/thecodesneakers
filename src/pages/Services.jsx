@@ -319,9 +319,9 @@ const Services = () => {
 
             <div className="flex justify-center gap-8 mt-12">
               {[
-                { icon: <FaLinkedin />, color: 'from-blue-400 to-cyan-400', link: '#' },
+                { icon: <FaLinkedin />, color: 'from-blue-400 to-cyan-400', link: 'http://linkedin.com/company/the-code-sneaker-s' },
                 { icon: <FaGithub />, color: 'from-gray-300 to-gray-400', link: '#' },
-                { icon: <FaInstagram />, color: 'from-pink-400 to-purple-400', link: '#' }
+                { icon: <FaInstagram />, color: 'from-pink-400 to-purple-400', link: 'https://instagram.com/thecodesneakers/' }
               ].map((social, i) => (
                 <motion.a
                   key={i}
