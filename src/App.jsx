@@ -12,6 +12,7 @@ import Testimonials from './pages/Testimonials';
 import Industries from './pages/Industries';
 import SuccessStories from './pages/SuccessStories';
 import FAQ from './pages/Faq.jsx';
+import ThemeToggle from './components/ThemeToggle.jsx';
 import TermsAndConditions from './pages/TermsAndConditions';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 
@@ -19,6 +20,7 @@ function App() {
   return (
     <Router>
       <Header />
+      <ThemeToggle />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
@@ -31,7 +33,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/industries" element={<Industries />} />
-        <Route path="career" element={<Career />} />
+        <Route path="/career" element={<Career />} />
         <Route path="/success-stories" element={<SuccessStories />} />
       </Routes>
       <Footer />

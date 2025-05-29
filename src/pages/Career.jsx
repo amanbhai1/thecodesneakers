@@ -1,11 +1,14 @@
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaGithub, FaCloud, FaPalette, FaBrain, FaCode } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
 
 const Career = () => {
+  const darkMode = useSelector((state) => state.theme.darkMode);
+  
   return (
-    <div className="min-h-screen bg-[#0f0f0f]">
+    <div className={`min-h-screen ${darkMode ? 'bg-[#0f0f0f] text-gray-100' : 'bg-white text-gray-800'}`}>
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center bg-gradient-to-br from-black via-[#0f0f0f] to-primary/20">
+      <section className={`relative h-[60vh] flex items-center bg-gradient-to-br ${darkMode ? 'from-black via-[#0f0f0f] to-primary/20' : 'from-white via-transparent'} overflow-hidden`}>
         <div className="max-w-screen-2xl mx-auto px-4 text-center">
           <motion.h1 
             className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary via-cyan-400 to-emerald-400 bg-clip-text text-transparent"
@@ -25,10 +28,10 @@ const Career = () => {
       </section>
 
       {/* Why Intern Section */}
-      <section className="relative py-16 md:py-24 bg-dark-secondary/95">
-        <div className="max-w-screen-xl mx-auto px-4">
+      <section className={`relative py-16 md:py-24 ${darkMode ? 'bg-dark-secondary/95' : 'bg-white'}`}>
+        <div className="max-w-screen-2xl mx-auto px-4">
           <motion.h2 
-            className="text-3xl md:text-4xl font-bold mb-12 bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent"
+            className={`text-3xl md:text-4xl font-bold mb-12 bg-gradient-to-r ${darkMode ? 'from-gray-200 to-gray-400' : 'from-primary via-cyan-400 to-emerald-400'} bg-clip-text text-transparent`}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
           >
@@ -44,12 +47,12 @@ const Career = () => {
             ].map((item, index) => (
               <motion.div 
                 key={index}
-                className="p-6 bg-gradient-to-b from-[#151515] to-[#0f0f0f] rounded-2xl border border-gray-800/50"
+                className={`p-6 ${darkMode ? 'bg-gradient-to-b from-[#151515] to-[#0f0f0f]' : 'bg-white'} rounded-2xl border border-gray-800/50`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
               >
                 <div className="text-4xl mb-4 text-primary">{item.icon}</div>
-                <h3 className="text-xl font-bold mb-2 text-gray-200">{item.title}</h3>
+                <h3 className="text-xl font-bold mb-2 text-gray-600">{item.title}</h3>
                 <p className="text-gray-400">{item.desc}</p>
               </motion.div>
             ))}
@@ -58,10 +61,10 @@ const Career = () => {
       </section>
 
       {/* Opportunities Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-black to-[#111111]">
-        <div className="max-w-screen-xl mx-auto px-4">
+      <section className={`py-16 md:py-24 ${darkMode ? 'bg-gradient-to-b from-black to-[#111111]' : 'bg-gradient-to-b from-white to-gray-200'}`}>
+        <div className="max-w-screen-2xl mx-auto px-4">
           <motion.h2 
-            className="text-3xl md:text-4xl font-bold mb-12 bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent"
+            className={`text-3xl md:text-4xl font-bold mb-12 bg-gradient-to-r ${darkMode ? 'from-primary to-cyan-400' : 'from-gray-800 to-gray-400'} bg-clip-text text-transparent`}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
           >
@@ -97,14 +100,14 @@ const Career = () => {
             ].map((role, index) => (
               <motion.div 
                 key={index}
-                className="group p-8 bg-dark-secondary/80 rounded-3xl border border-gray-800 hover:border-primary/40 transition-all"
+                className={`group p-8 ${darkMode ? 'bg-dark-secondary/80' : 'bg-white'} rounded-3xl border border-gray-800 hover:border-primary/40 transition-all`}
                 initial={{ opacity: 0, x: index % 2 ? 50 : -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
               >
                 <div className="flex items-start gap-6">
                   <div className="text-4xl text-primary">{role.icon}</div>
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-200 mb-2">{role.title}</h3>
+                    <h3 className="text-2xl font-bold text-gray-500 mb-2">{role.title}</h3>
                     <p className="text-gray-400 mb-4">{role.desc}</p>
                     <div className="flex flex-wrap gap-2">
                       {role.tech.map((tech, i) => (
@@ -122,13 +125,13 @@ const Career = () => {
       </section>
 
       {/* How to Apply Section */}
-      <section className="relative py-16 md:py-24 bg-gradient-to-br from-dark-secondary to-black">
-        <div className="max-w-screen-xl mx-auto px-4 text-center">
+      <section className={`relative py-16 md:py-24 ${darkMode ? 'bg-gradient-to-br from-dark-secondary to-black' : 'bg-white'}`}>
+        <div className="max-w-screen-2xl mx-auto px-4 text-center">
           <motion.div 
             className="inline-block bg-gradient-to-br from-primary/20 to-primary/5 backdrop-blur-2xl p-1 rounded-3xl"
             whileHover={{ scale: 1.02 }}
           >
-            <div className="bg-dark-secondary/95 p-8 md:p-12 rounded-3xl">
+            <div className={`bg-dark-secondary/95 ${darkMode ? 'bg-dark-secondary/95' : 'bg-white'} p-8 md:p-12 rounded-3xl`}>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Ready to Join Us?
               </h2>
@@ -137,7 +140,7 @@ const Career = () => {
               </p>
               <motion.a
                 href="mailto:careers@thecodesneaker.com"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-dark-primary rounded-2xl hover:bg-primary/90 transition-all text-lg font-bold"
+                className={`inline-flex items-center gap-2 px-8 py-4 ${darkMode ? 'bg-primary text-dark-primary' : 'bg-gray-800 text-white'} rounded-2xl hover:bg-primary/90 transition-all text-lg font-bold`}
                 whileHover={{ scale: 1.05 }}
               >
                 Apply Now

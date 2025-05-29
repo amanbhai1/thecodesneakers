@@ -14,6 +14,7 @@ import {
   FaLinkedin,
   FaCheck
 } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
 
 const coreServices = [
   { icon: <Code />, title: 'Website Development', desc: 'Build fast, responsive, and SEO-optimized websites tailored to your brand' },
@@ -26,11 +27,44 @@ const coreServices = [
   { icon: <Cloud />, title: 'Cloud DevOps', desc: 'Scalable infrastructure and automation solutions' }
 ];
 
+const packages = [
+  {
+    title: "Starter",
+    price: "₹3999",
+    features: ["Basic Website", "3 Revisions", "SEO Setup", "1 Month Support"],
+    borderColor: "border-gray-300",
+  },
+  {
+    title: "Professional",
+    price: "₹9999",
+    features: [
+      "Custom Software",
+      "UI/UX Design",
+      "Digital Marketing",
+      "3 Months Support",
+    ],
+    borderColor: "border-primary/60",
+    popular: true,
+  },
+  {
+    title: "Enterprise",
+    price: "Custom",
+    features: [
+      "Full Solution",
+      "Priority Support",
+      "Dedicated Team",
+      "Ongoing Maintenance",
+    ],
+    borderColor: "border-gray-300",
+  },
+];
 const Home = () => {
+  const darkMode = useSelector((state) => state.theme.darkMode);
   return (
-    <div className="min-h-screen bg-[#0f0f0f] overflow-hidden">
+    <div className={`min-h-screen overflow-hidden ${darkMode ? 'bg-[#0f0f0f]' : 'bg-white'}`}>
+
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-black via-[#0f0f0f] to-primary/20 overflow-hidden">
+      <section className={`relative h-screen flex items-center justify-center bg-gradient-to-br overflow-hidden${darkMode ? 'from-black via-[#0f0f0f] to-primary/20' : 'from-white via-transparent'}`}>
         <div className="absolute inset-0 opacity-20 bg-[url('/Assets/aman.png')]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#3b82f620_0%,transparent_70%)] animate-pulse" />
 
@@ -42,7 +76,7 @@ const Home = () => {
           <div className="space-y-6 md:space-y-8">
             <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold font-clashdisplay bg-gradient-to-r from-primary via-cyan-400 to-emerald-400 bg-clip-text text-transparent leading-tight">
               <span className="block">The Code</span>
-              <span className="block bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent mt-2">
+              <span className={`block bg-gradient-to-r bg-clip-text text-transparent mt-2 ${darkMode ? 'from-gray-200 to-gray-400' : 'from-gray-4  00 to-gray-400 '}`}>
                 Sneaker's
               </span>
             </h1>
@@ -72,12 +106,22 @@ const Home = () => {
         </motion.div>
       </section>
 
-      {/* Core Services Grid */}
-      <section className="relative py-24 md:py-32 bg-gradient-to-b from-[#0a0a0a] to-[#111111]">
-        <div className="absolute inset-0 bg-[url('/Assets/grid.svg')] opacity-10" />
-        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section
+        className={`relative py-24 md:py-32 transition-all duration-500 ${darkMode
+          ? 'bg-gradient-to-b from-[#0a0a0a] to-[#111111]'
+          : 'bg-gradient-to-b from-white to-gray-100'
+          }`}
+      >
+        {/* Grid Background Overlay */}
+        <div className="absolute inset-0 bg-[url('/Assets/grid.svg')] opacity-10 pointer-events-none" />
+
+        <div className="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Title */}
           <motion.h2
-            className="text-3xl md:text-5xl lg:text-6xl font-bold text-center mb-12 md:mb-20 bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent"
+            className={`text-3xl md:text-5xl lg:text-6xl font-bold text-center mb-12 md:mb-20 ${darkMode
+              ? 'text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-400'
+              : 'text-gray-800'
+              }`}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -85,6 +129,7 @@ const Home = () => {
             Our Digital Expertise
           </motion.h2>
 
+          {/* Services Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {coreServices.map((service, index) => (
               <motion.div
@@ -92,48 +137,100 @@ const Home = () => {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="group relative p-6 md:p-8 bg-gradient-to-b from-[#151515] to-[#0f0f0f] rounded-2xl lg:rounded-3xl border border-gray-800/50 hover:border-cyan-400/30 transition-all"
+                className={`group relative p-6 md:p-8 rounded-2xl lg:rounded-3xl border transition-all duration-300 ${darkMode
+                  ? 'bg-gradient-to-b from-[#151515] to-[#0f0f0f] border-gray-800/50 hover:border-cyan-400/30'
+                  : 'bg-white border-gray-300 hover:border-blue-400/40'
+                  }`}
               >
-                <div className="text-3xl md:text-4xl mb-4 md:mb-6 bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent">
+                {/* Icon */}
+                <div
+                  className={`text-3xl md:text-4xl mb-4 md:mb-6 ${darkMode
+                    ? 'text-cyan-400'
+                    : 'text-yellow-400'
+                    }`}
+                >
                   {service.icon}
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3 bg-gradient-to-r from-gray-200 to-gray-300 bg-clip-text text-transparent">
+
+                {/* Title */}
+                <h3
+                  className={`text-xl md:text-2xl font-bold mb-2 md:mb-3 ${darkMode
+                    ? 'text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-300'
+                    : 'text-gray-800'
+                    }`}
+                >
                   {service.title}
                 </h3>
-                <p className="text-gray-400 text-sm md:text-base leading-relaxed">{service.desc}</p>
+
+                {/* Description */}
+                <p
+                  className={`text-sm md:text-base leading-relaxed ${darkMode ? 'text-gray-400' : 'text-gray-600'
+                    }`}
+                >
+                  {service.desc}
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
+
       {/* Value Proposition Section */}
-      <div className="relative bg-dark-secondary/95 py-24 md:py-32 backdrop-blur-lg">
+      <div
+        className={`relative py-24 md:py-32 backdrop-blur-lg transition-all duration-500 ${darkMode
+          ? 'bg-dark-secondary/95'
+          : 'bg-gradient-to-b from-white to-gray-100'
+          }`}
+      >
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+            {/* Left Section */}
             <div className="space-y-6 md:space-y-8">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+              <h2
+                className={`text-3xl md:text-4xl lg:text-5xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'
+                  }`}
+              >
                 Why Choose The Code Sneaker's
               </h2>
-              <p className="text-gray-400/90 md:text-lg">
-                We combine technical expertise with business acumen to deliver solutions that drive real results
+              <p
+                className={`md:text-lg ${darkMode ? 'text-gray-400/90' : 'text-gray-600'
+                  }`}
+              >
+                We combine technical expertise with business acumen to deliver
+                solutions that drive real results
               </p>
               <div className="space-y-4 md:space-y-6">
                 {[
                   'Full-cycle development from concept to deployment',
                   'Agile methodology with transparent communication',
                   'Cutting-edge technology stack',
-                  'ROI-focused solutions'
+                  'ROI-focused solutions',
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-3 md:gap-4">
-                    <div className="w-6 h-6 md:w-8 md:h-8 bg-primary/10 rounded-lg flex items-center justify-center">
-                      <FaCheckCircle className="text-primary text-sm md:text-base" />
+                    <div
+                      className={`w-6 h-6 md:w-8 md:h-8 rounded-lg flex items-center justify-center ${darkMode
+                        ? 'bg-primary/10'
+                        : 'bg-blue-100 text-blue-600'
+                        }`}
+                    >
+                      <FaCheckCircle
+                        className={`${darkMode ? 'text-primary' : 'text-blue-600'
+                          } text-sm md:text-base`}
+                      />
                     </div>
-                    <span className="text-gray-300/90 md:text-lg">{item}</span>
+                    <span
+                      className={`md:text-lg ${darkMode ? 'text-gray-300/90' : 'text-gray-700'
+                        }`}
+                    >
+                      {item}
+                    </span>
                   </div>
                 ))}
               </div>
             </div>
+
+            {/* Right Section */}
             <div className="relative group mt-8 md:mt-0">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-3xl transform group-hover:rotate-1 transition-all duration-500" />
               <img
@@ -147,41 +244,34 @@ const Home = () => {
       </div>
 
       {/* Service Packages */}
-      <div className="relative bg-black py-24 md:py-32">
+      <div
+        className={`relative py-24 md:py-32 transition-all duration-500 ${darkMode ? "bg-black" : "bg-white"
+          }`}
+      >
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+            <h2
+              className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${darkMode ? "text-white" : "text-gray-900"
+                }`}
+            >
               Tailored Solutions
             </h2>
-            <p className="text-gray-400/90 max-w-2xl mx-auto md:text-lg">
+            <p
+              className={`max-w-2xl mx-auto md:text-lg ${darkMode ? "text-gray-400/90" : "text-gray-600"
+                }`}
+            >
               Flexible packages designed for businesses at every stage
             </p>
           </div>
+
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-            {[
-              {
-                title: 'Starter',
-                price: '₹3999',
-                features: ['Basic Website', '3 Revisions', 'SEO Setup', '1 Month Support'],
-                borderColor: 'border-gray-800'
-              },
-              {
-                title: 'Professional',
-                price: '₹9999',
-                features: ['Custom Software', 'UI/UX Design', 'Digital Marketing', '3 Months Support'],
-                borderColor: 'border-primary/40',
-                popular: true
-              },
-              {
-                title: 'Enterprise',
-                price: 'Custom',
-                features: ['Full Solution', 'Priority Support', 'Dedicated Team', 'Ongoing Maintenance'],
-                borderColor: 'border-gray-800'
-              }
-            ].map((pkg, index) => (
+            {packages.map((pkg, index) => (
               <motion.div
                 key={index}
-                className={`p-6 md:p-8 bg-dark-secondary/50 rounded-xl md:rounded-2xl border ${pkg.borderColor} hover:border-primary/40 transition-all relative`}
+                className={`p-6 md:p-8 rounded-xl md:rounded-2xl border transition-all relative ${darkMode
+                  ? `bg-dark-secondary/50 ${pkg.borderColor}`
+                  : `bg-gray-50 ${pkg.borderColor}`
+                  } hover:border-primary/50`}
                 whileHover={{ scale: 1.02 }}
                 viewport={{ once: true }}
               >
@@ -190,26 +280,45 @@ const Home = () => {
                     Most Popular
                   </div>
                 )}
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{pkg.title}</h3>
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-4">{pkg.price}</div>
+                <h3
+                  className={`text-xl md:text-2xl font-bold mb-2 ${darkMode ? "text-white" : "text-gray-800"
+                    }`}
+                >
+                  {pkg.title}
+                </h3>
+                <div className={`text-3xl md:text-4xl font-bold mb-4 ${darkMode ? "text-primary-dark" : "text-primary-light"
+                  }`}>
+                  {pkg.price}
+                </div>
+
                 <ul className="space-y-2 md:space-y-3 mb-6 md:mb-8">
                   {pkg.features.map((feature, i) => (
-                    <li key={i} className="flex items-center gap-2 text-gray-300 text-sm md:text-base">
+                    <li
+                      key={i}
+                      className={`flex items-center gap-2 text-sm md:text-base ${darkMode ? "text-gray-300" : "text-gray-600"
+                        }`}
+                    >
                       <FaCheck className="text-primary text-xs md:text-sm" />
                       {feature}
                     </li>
                   ))}
                 </ul>
+
                 <button
-                  className="w-full bg-primary/10 hover:bg-primary/20 text-primary py-2 md:py-3 rounded-lg transition-all text-sm md:text-base"
+                  className={`w-full py-2 md:py-3 rounded-lg transition-all text-sm md:text-base ${darkMode
+                    ? "bg-primary/10 hover:bg-primary/20 text-primary"
+                    : "bg-blue-100 hover:bg-blue-200 text-blue-700"
+                    }`}
                   onClick={() => {
                     const message = encodeURIComponent(
-                      `Hi, I'm interested in the ${pkg.title} Plan (${pkg.price}) for ${pkg.features.join(', ')}.`
+                      `Hi, I'm interested in the ${pkg.title} Plan (${pkg.price}) for ${pkg.features.join(", ")}.`
                     );
-                    window.open(`https://instagram.com/thecodesneakers`, '_blank');
-                    navigator.clipboard.writeText(decodeURIComponent(message)).then(() => {
-                      alert("Message copied! Paste it into Instagram DM.");
-                    });
+                    window.open(`https://instagram.com/thecodesneakers`, "_blank");
+                    navigator.clipboard
+                      .writeText(decodeURIComponent(message))
+                      .then(() => {
+                        alert("Message copied! Paste it into Instagram DM.");
+                      });
                   }}
                 >
                   Get Started
@@ -222,10 +331,10 @@ const Home = () => {
 
 
       {/* Team Section */}
-      <div className="relative bg-gradient-to-b from-[#0a0a0a] to-[#111111] py-24 md:py-32">
+      <div className={`relative py-24 md:py-32 transition-all duration-500 ${darkMode ? "bg-gradient-to-b from-[#0a0a0a] to-[#111111]" : "bg-gradient-to-b from-white to-gray-100"}`}>
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <motion.h2
-            className="text-3xl md:text-5xl lg:text-6xl font-bold text-center mb-16 md:mb-20 bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent"
+            className={`text-3xl md:text-5xl lg:text-6xl font-bold text-center mb-16 md:mb-20 bg-clip-text text-transparent ${darkMode ? "bg-gradient-to-r from-primary to-cyan-400" : "bg-gradient-to-r from-blue-600 to-green-400"}`}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -253,7 +362,7 @@ const Home = () => {
             {
               name: "Vikash Shakaya",
               role: "Founder & CEO",
-              experience: `Co-founder of The Code Sneakers, Vikash is a skilled MERN Stack Developer with 50+ projects built and 200+ students mentored. He combines technical expertise with creative problem-solving to deliver impactful web experiences and leads with a mission to make coding exciting and accessible for all.`,
+              experience: `Vikash is a skilled MERN Stack Developer with 50+ projects built and 200+ students mentored. He combines technical expertise with creative problem-solving to deliver impactful web experiences and leads with a mission to make coding exciting and accessible for all.`,
               image: "/Assets/vikash.jpg",
               expertise: ["MERN Stack Developer", "Mentor", "Innovator"],
               linkedinLink: "https://www.linkedin.com/in/vikash-shakya-978a052b2/"
@@ -280,16 +389,18 @@ const Home = () => {
               <div className="md:w-1/2 relative group overflow-hidden rounded-2xl md:rounded-3xl">
                 <motion.img
                   src={member.image}
-                  className="w-full h-[300px] md:h-[400px] object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  className={`w-full h-[300px] md:h-[400px] object-cover transition-all duration-500 ${darkMode ? 'grayscale group-hover:grayscale-0' : ''}`}
                   alt={member.name}
                   whileHover={{ scale: 1.05 }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                {darkMode && (
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                )}
                 <div className="absolute bottom-4 left-4 z-10 flex gap-2 flex-wrap">
                   {member.expertise?.map((skill, i) => (
                     <span
                       key={i}
-                      className="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs md:text-sm backdrop-blur-sm"
+                      className={`px-2 py-1 ${darkMode ? "bg-primary/10 text-primary" : "bg-blue-100 text-blue-700"} rounded-full text-xs md:text-sm backdrop-blur-sm`}
                     >
                       {skill}
                     </span>
@@ -300,7 +411,7 @@ const Home = () => {
               {/* Content Section */}
               <div className="md:w-1/2 flex flex-col justify-center space-y-4 md:space-y-6">
                 <motion.span
-                  className="text-primary font-semibold text-lg md:text-xl"
+                  className={`font-semibold text-lg md:text-xl ${darkMode ? "text-primary" : "text-blue-600"}`}
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ delay: 0.2 }}
@@ -309,7 +420,7 @@ const Home = () => {
                 </motion.span>
 
                 <motion.h2
-                  className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent"
+                  className={`text-3xl md:text-4xl font-bold bg-clip-text text-transparent ${darkMode ? "bg-gradient-to-r from-gray-200 to-gray-400" : "bg-gradient-to-r from-gray-700 to-gray-900"}`}
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ delay: 0.3 }}
@@ -318,7 +429,7 @@ const Home = () => {
                 </motion.h2>
 
                 <motion.p
-                  className="text-gray-400 text-base md:text-lg leading-relaxed"
+                  className={`text-base md:text-lg leading-relaxed ${darkMode ? "text-gray-400" : "text-gray-700"}`}
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ delay: 0.4 }}
@@ -335,7 +446,7 @@ const Home = () => {
                   {member.projectsLink && (
                     <motion.a
                       href={member.projectsLink}
-                      className="flex items-center gap-2 text-primary hover:text-cyan-400 transition-colors"
+                      className={`flex items-center gap-2 transition-colors ${darkMode ? "text-primary hover:text-cyan-400" : "text-blue-600 hover:text-blue-800"}`}
                       whileHover={{ x: 5 }}
                     >
                       <FaGithub className="text-xl md:text-2xl" />
@@ -345,7 +456,7 @@ const Home = () => {
                   {member.linkedinLink && (
                     <motion.a
                       href={member.linkedinLink}
-                      className="flex items-center gap-2 text-primary hover:text-cyan-400 transition-colors"
+                      className={`flex items-center gap-2 transition-colors ${darkMode ? "text-primary hover:text-cyan-400" : "text-blue-600 hover:text-blue-800"}`}
                       whileHover={{ x: 5 }}
                     >
                       <FaLinkedin className="text-xl md:text-2xl" />
@@ -359,8 +470,14 @@ const Home = () => {
         </div>
       </div>
 
+
       {/* CTA Section */}
-      <section className="relative py-24 md:py-32 bg-gradient-to-br from-black to-primary/20">
+      <section
+        className={`relative py-24 md:py-32 transition-all duration-500 ${darkMode
+            ? "bg-gradient-to-br from-black to-primary/20"
+            : "bg-gradient-to-br from-white to-gray-100"
+          }`}
+      >
         <div className="max-w-screen-xl mx-auto px-4 text-center">
           <motion.div
             className="space-y-8 md:space-y-12"
@@ -368,16 +485,22 @@ const Home = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-primary via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+            <h2
+              className={`text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent ${darkMode
+                  ? "bg-gradient-to-r from-primary via-cyan-400 to-emerald-400"
+                  : "bg-gradient-to-r from-primary via-cyan-400 to-emerald-500"
+                }`}
+            >
               Ready to Innovate?
             </h2>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="mt-8 md:mt-16"
-            >
+
+            <motion.div whileHover={{ scale: 1.05 }} className="mt-8 md:mt-16">
               <Link
                 to="/contact"
-                className="inline-block px-12 py-4 md:px-16 md:py-6 bg-gradient-to-r from-primary to-cyan-400 text-dark-primary rounded-2xl hover:shadow-2xl text-lg md:text-xl font-bold"
+                className={`inline-block px-12 py-4 md:px-16 md:py-6 rounded-2xl text-lg md:text-xl font-bold transition-shadow duration-300 hover:shadow-2xl ${darkMode
+                    ? "bg-gradient-to-r from-primary to-cyan-400 text-dark-primary"
+                    : "bg-gradient-to-r from-primary to-cyan-400 text-white"
+                  }`}
               >
                 Start Your Project Now
               </Link>
@@ -385,6 +508,7 @@ const Home = () => {
           </motion.div>
         </div>
       </section>
+
     </div>
   );
 };

@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import { FaQuoteLeft, FaStar } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
 
 const Testimonials = () => {
+  const darkMode = useSelector((state) => state.theme.darkMode);
+  
   const testimonials = [
     {
       quote: "The Code Sneakers team completely transformed our digital presence. Their technical expertise and creative approach helped us increase online sales by 300% within 6 months.",
@@ -41,9 +44,9 @@ const Testimonials = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-gray-100 overflow-hidden">
+    <div className={`min-h-screen ${darkMode ? 'bg-[#0a0a0a] text-gray-100' : 'bg-white text-gray-800'}`}>
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center bg-gradient-to-br from-black via-[#0f0f0f] to-primary/20 overflow-hidden">
+      <section className={`relative h-[80vh] flex items-center justify-center bg-gradient-to-br ${darkMode ? 'from-black via-[#0f0f0f] to-primary/20' : 'from-white via-transparent'} overflow-hidden`}>
         <div className="absolute inset-0 bg-[url('/Assets/noise.png')] opacity-20" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#3b82f620_0%,transparent_70%)] animate-pulse" />
         
@@ -56,7 +59,7 @@ const Testimonials = () => {
             Client Success Stories
           </h1>
           <motion.p
-            className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto"
+            className="text-xl md:text-2xl text-gray-500 mb-8 max-w-3xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
@@ -66,14 +69,14 @@ const Testimonials = () => {
       </section>
 
       {/* Stats Section */}
-      <div className="relative py-20 bg-gradient-to-b from-[#0a0a0a] to-[#111111]">
+      <div className={`relative py-20 ${darkMode ? 'bg-gradient-to-b from-[#0a0a0a] to-[#111111]' : 'bg-gradient-to-b from-white to-gray-200'}`}>
         <div className="max-w-screen-2xl mx-auto px-4 grid md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <motion.div 
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="p-8 bg-gradient-to-b from-[#151515] to-[#0f0f0f] rounded-2xl border border-gray-800/50 text-center"
+              className={`p-8 ${darkMode ? 'bg-gradient-to-b from-[#151515] to-[#0f0f0f]' : 'bg-white'} rounded-2xl border border-gray-800/50 text-center`}
             >
               <div className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent">
                 {stat.number}
@@ -85,7 +88,7 @@ const Testimonials = () => {
       </div>
 
       {/* Testimonials Grid */}
-      <section className="relative py-20 bg-gradient-to-b from-[#111111] to-[#0a0a0a]">
+      <section className={`relative py-20 ${darkMode ? 'bg-gradient-to-b from-[#111111] to-[#0a0a0a]' : 'bg-gradient-to-b from-white to-gray-200'}`}>
         <div className="max-w-screen-2xl mx-auto px-4 grid md:grid-cols-2 gap-8">
           {testimonials.map((testimonial, index) => (
             <motion.div 
@@ -93,12 +96,12 @@ const Testimonials = () => {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="group p-8 bg-gradient-to-b from-[#151515] to-[#0f0f0f] rounded-3xl border border-gray-800/50 hover:border-cyan-400/30 transition-all"
+              className={`group p-8 ${darkMode ? 'bg-gradient-to-b from-[#151515] to-[#0f0f0f]' : 'bg-white'} rounded-3xl border border-gray-800/50 hover:border-cyan-400/30 transition-all`}
             >
               <div className="mb-6 text-primary text-3xl">
                 <FaQuoteLeft />
               </div>
-              <p className="text-xl text-gray-300 mb-6 leading-relaxed">"{testimonial.quote}"</p>
+              <p className="text-xl text-gray-500 mb-6 leading-relaxed">"{testimonial.quote}"</p>
               
               <div className="flex items-center gap-4">
                 <div className="flex-1">
@@ -120,9 +123,9 @@ const Testimonials = () => {
       </section>
 
       {/* Client Logos */}
-      <div className="relative py-20 bg-gradient-to-b from-[#0a0a0a] to-[#111111]">
+      <div className={`relative py-20 ${darkMode ? 'bg-gradient-to-b from-[#0a0a0a] to-[#111111]' : 'bg-gradient-to-b from-white to-gray-200'}`}>
         <div className="max-w-screen-2xl mx-auto px-4">
-          <h3 className="text-2xl text-center mb-12 text-gray-400">Trusted By Industry Leaders</h3>
+          <h3 className="text-2xl text-center mb-12 text-gray-500">Trusted By Industry Leaders</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-70 hover:opacity-100 transition-opacity">
             {[...Array(8)].map((_, index) => (
               <motion.div 
@@ -138,19 +141,19 @@ const Testimonials = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="relative py-32 bg-gradient-to-r from-primary/20 to-cyan-400/10">
+      <div className={`relative py-32 ${darkMode ? 'bg-gradient-to-r from-primary/20 to-cyan-400/10' : 'bg-gradient-to-r from-gray-200 to-gray-400'}`}>
         <div className="max-w-screen-xl mx-auto px-4 text-center">
           <motion.div 
             className="space-y-8"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
           >
-            <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent">
+            <h2 className={`text-4xl md:text-6xl font-bold bg-gradient-to-r bg-clip-text text-transparent ${darkMode ? 'from-gray-200 to-gray-400' : 'from-gray-600 to-gray-800'}`}>
               Ready to Write Your Success Story?
             </h2>
             <motion.button
               whileHover={{ scale: 1.05 }}
-              className="inline-block px-16 py-6 bg-gradient-to-r from-primary to-cyan-400 text-[#151515] rounded-2xl font-bold hover:shadow-2xl text-lg"
+              className={`inline-block px-16 py-6 bg-gradient-to-r from-primary to-cyan-400 text-[#151515] rounded-2xl font-bold hover:shadow-2xl text-lg`}
             >
               Start Your Journey Now
             </motion.button>

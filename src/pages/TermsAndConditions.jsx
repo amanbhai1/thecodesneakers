@@ -1,15 +1,18 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 export default function TermsAndConditions() {
+  const darkMode = useSelector((state) => state.theme.darkMode);
+  
   return (
-    <div className="min-h-screen  bg-gradient-to-b from-black via-[#0a0a0a] to-[#0f0f0f] text-white px-4 py-28 md:px-8">
-      <div className="max-w-5xl mx-auto border border-neutral-800 rounded-2xl p-8 bg-black/60 shadow-[0_0_30px_rgba(0,255,180,0.15)] backdrop-blur-md">
+    <div className={`min-h-screen ${darkMode ? 'bg-gradient-to-b from-black via-[#0a0a0a] to-[#0f0f0f]' : 'bg-gradient-to-b from-white to-gray-200'} text-${darkMode ? 'white' : 'black'} px-4 py-28 md:px-8`}>
+      <div className={`max-w-5xl mx-auto border rounded-2xl p-8 ${darkMode ? 'bg-black/60 border-neutral-800' : 'bg-white border-gray-300'} shadow-[0_0_30px_rgba(0,255,180,0.15)] backdrop-blur-md`}>
         
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center bg-gradient-to-r from-lime-300 to-cyan-400 bg-clip-text text-transparent animate-gradient-x">
+        <h1 className={`text-4xl md:text-5xl font-bold mb-6 text-center bg-gradient-to-r ${darkMode ? 'from-lime-300 to-cyan-400' : 'from-blue-500 to-blue-300'} bg-clip-text text-transparent animate-gradient-x`}>
           Terms & Conditions
         </h1>
 
-        <p className="text-gray-400 mb-10 text-center text-lg">
+        <p className={`mb-10 text-center text-lg ${darkMode ? 'text-gray-400' : 'text-gray-800'}`}>
           Welcome to <span className="text-lime-300 font-semibold">The Code Sneakers</span>. By using our platform, you agree to the following terms. Please read them carefully.
         </p>
 
@@ -42,8 +45,8 @@ export default function TermsAndConditions() {
             },
           ].map((item, index) => (
             <section key={index}>
-              <h2 className="text-2xl font-semibold text-cyan-300 mb-2">{item.title}</h2>
-              <p className="text-gray-400 leading-relaxed">
+              <h2 className={`text-2xl font-semibold ${darkMode ? 'text-cyan-300' : 'text-blue-600'} mb-2`}>{item.title}</h2>
+              <p className={`leading-relaxed ${darkMode ? 'text-gray-400' : 'text-gray-800'}`}>
                 {item.text}
                 {item.link && (
                   <a href={item.link} className="text-lime-300 underline ml-1">
@@ -54,7 +57,9 @@ export default function TermsAndConditions() {
             </section>
           ))}
         </div>
-{/* 
+
+        {/* Uncomment if you want to show the copyright notice */}
+        {/* 
         <div className="mt-12 text-center text-sm text-gray-600">
           &copy; {new Date().getFullYear()} The Code Sneakers. All rights reserved.
         </div> */}

@@ -1,6 +1,11 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { motion } from 'framer-motion';
+import { FaQuoteLeft, FaStar } from 'react-icons/fa';
 
 const Blog = () => {
+  const darkMode = useSelector((state) => state.theme.darkMode);
+  
   const posts = [
     {
       title: 'AI Revolution in 2025',
@@ -69,9 +74,9 @@ const Blog = () => {
   ];
 
   return (
-    <div className="bg-black min-h-screen py-32 text-white font-poppins">
+    <div className={`min-h-screen ${darkMode ? 'bg-[#0a0a0a]' : 'bg-white'} py-32 text-${darkMode ? 'white' : 'black'} font-poppins`}>
       <div className="max-w-7xl mx-auto px-4">
-        <h1 className="text-5xl font-extrabold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400">
+        <h1 className={`text-5xl font-extrabold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400`}>
           Latest Insights
         </h1>
 
@@ -79,7 +84,7 @@ const Blog = () => {
           {posts.map((post, index) => (
             <div
               key={index}
-              className="bg-[#111111] border border-gray-800 rounded-2xl overflow-hidden hover:shadow-xl hover:border-cyan-500 transition duration-300 hover:scale-[1.02] transform"
+              className={`rounded-2xl overflow-hidden hover:shadow-xl transition duration-300 ${darkMode ? 'bg-[#111111] border border-gray-800' : 'bg-white border border-gray-300'}`}
             >
               <img
                 src={post.image}
@@ -89,18 +94,18 @@ const Blog = () => {
                 }}
                 className="w-full h-60 object-cover"
               />
-              <div className="p-6">
-                <div className="flex justify-between items-center text-sm text-gray-400 mb-2">
+              <div className={`p-6 ${darkMode ? 'text-white' : 'text-black'}`}>
+                <div className="flex justify-between items-center text-sm mb-2">
                   <span>{post.date}</span>
                   <span>{post.readTime}</span>
                 </div>
-                <span className="inline-block mb-3 text-xs uppercase text-cyan-400 tracking-wider font-semibold">
+                <span className={`inline-block mb-3 text-xs uppercase ${darkMode ? 'text-cyan-400' : 'text-gray-600'} tracking-wider font-semibold`}>
                   {post.category}
                 </span>
-                <h3 className="text-2xl font-bold mb-3 text-white hover:text-cyan-400 transition">
+                <h3 className={`text-2xl font-bold mb-3 hover:${darkMode ? 'text-cyan-400' : 'text-blue-600'} transition`}>
                   {post.title}
                 </h3>
-                <p className="text-gray-400 mb-4 line-clamp-3">{post.excerpt}</p>
+                <p className={`mb-4 line-clamp-3 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{post.excerpt}</p>
 
                 <div className="flex justify-between items-center mt-4 text-gray-500 text-sm">
                   <span>💬 {post.comments} comments</span>
@@ -114,13 +119,13 @@ const Blog = () => {
                       alt={post.author.name}
                       className="w-9 h-9 rounded-full border border-cyan-400"
                     />
-                    <span className="text-sm text-gray-300">{post.author.name}</span>
+                    <span className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{post.author.name}</span>
                   </div>
                   <div className="flex gap-2 flex-wrap justify-end">
                     {post.tags.map((tag, i) => (
                       <span
                         key={i}
-                        className="text-xs bg-gradient-to-r from-cyan-400 to-teal-600 px-2 py-1 rounded-full text-black font-semibold"
+                        className={`text-xs bg-gradient-to-r from-cyan-400 to-teal-600 px-2 py-1 rounded-full text-black font-semibold`}
                       >
                         #{tag}
                       </span>
@@ -129,7 +134,7 @@ const Blog = () => {
                 </div>
 
                 <div className="mt-6">
-                  <button className="text-cyan-400 hover:underline text-sm">
+                  <button className={`text-cyan-400 hover:underline text-sm ${darkMode ? 'hover:text-cyan-300' : 'hover:text-blue-600'}`}>
                     Read More →
                   </button>
                 </div>

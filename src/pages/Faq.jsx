@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 const faqs = [
   {
@@ -24,15 +25,19 @@ const faqs = [
 ];
 
 export default function FAQ() {
+  const darkMode = useSelector((state) => state.theme.darkMode);
+  
   return (
-    <div className="min-h-screen bg-black text-white px-6 py-32">
+    <div className={`min-h-screen ${darkMode ? 'bg-black text-white' : 'bg-white text-black'} px-6 py-32`}>
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-gradient mb-10">Frequently Asked Questions</h2>
+        <h2 className={`text-4xl font-bold mb-10 ${darkMode ? 'text-gradient' : 'text-gradient-light'}`}>
+          Frequently Asked Questions
+        </h2>
         <div className="space-y-6">
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-zinc-900 p-6 rounded-xl shadow-lg border border-zinc-700 hover:border-yellow-400 transition">
-              <h3 className="text-xl font-semibold text-yellow-400 mb-2">{faq.question}</h3>
-              <p className="text-zinc-300">{faq.answer}</p>
+            <div key={index} className={`p-6 rounded-xl shadow-lg border ${darkMode ? 'bg-zinc-900 border-zinc-700 hover:border-yellow-400' : 'bg-gray-100 border-gray-300 hover:border-blue-400'} transition`}>
+              <h3 className={`text-xl font-semibold mb-2 ${darkMode ? 'text-yellow-400' : 'text-blue-600'}`}>{faq.question}</h3>
+              <p className={`${darkMode ? 'text-zinc-300' : 'text-gray-700'}`}>{faq.answer}</p>
             </div>
           ))}
         </div>

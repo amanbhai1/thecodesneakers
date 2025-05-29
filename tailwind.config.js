@@ -1,3 +1,5 @@
+const textShadowPlugin = require('tailwindcss-textshadow');
+
 module.exports = {
   content: [
     "./index.html",
@@ -7,9 +9,10 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
-      colors: {
-        primary: '#f1f14a',
-        dark: '#090909',
+       colors: {
+        primary: '#facc15', // yellow-400
+        'primary-dark': '#fde047', // yellow-300
+        'primary-light': '#ca8a04', // yellow-600 (for light mode)
         'dark-secondary': '#0e0e0e',
       },
       fontFamily: {
@@ -29,7 +32,7 @@ module.exports = {
           '0%': { opacity: 0, transform: 'translateY(20px)' },
           '100%': { opacity: 1, transform: 'translateY(0)' }
         }
-      }
+      },
     }
-  }
+  },
 }
