@@ -354,7 +354,7 @@ const Home = () => {
             {
               name: "Krish Bhardwaj",
               role: "Founder & CEO",
-              experience: `At the helm of The Code Sneakers, I fuse vision with innovation. With expertise in Full Stack Development, AR/VR, and Game Dev, I lead a team passionate about engineering next-gen digital solutions. From immersive tech to scalable platforms, we build experiences that are bold, intuitive, and built to last. For me, it’s not just about code, it’s about pushing boundaries, and helping brands thrive in the future of tech.`,
+              experience: `At the helm of The Code Sneakers, I fuse vision with innovation. With expertise in Full Stack Development, AR/VR, and Game Dev, I lead a team passionate about engineering next-gen digital solutions. From immersive tech to scalable platforms, we build experiences that are bold, intuitive, and built to last. For me, it’s not just about code, it’s about pushing boundaries and helping brands thrive in the future of tech.`,
               image: "/Assets/team3.jpg",
               expertise: ["MERN", "Game Developer", "AR"],
               linkedinLink: "https://www.linkedin.com/in/krishbharadwaj23/"
