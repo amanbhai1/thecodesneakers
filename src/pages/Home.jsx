@@ -352,7 +352,7 @@ const Home = () => {
               linkedinLink: "https://www.linkedin.com/in/aman-gupta-a11a672ab/"
             },
             {
-              name: "Krish Bhardawaj",
+              name: "Krish Bhardwaj",
               role: "Founder & CEO",
               experience: `Expert in crafting engaging and responsive UI using React.js. Focused on user experience and design consistency across projects.`,
               image: "/Assets/team3.jpg",
@@ -360,7 +360,7 @@ const Home = () => {
               linkedinLink: "https://www.linkedin.com/in/krishbharadwaj23/"
             },
             {
-              name: "Vikash Shakaya",
+              name: "Vikash Shakya",
               role: "Founder & CEO",
               experience: `Vikash is a skilled MERN Stack Developer with 50+ projects built and 200+ students mentored. He combines technical expertise with creative problem-solving to deliver impactful web experiences and leads with a mission to make coding exciting and accessible for all.`,
               image: "/Assets/vikash.jpg",
