@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
 import { FaQuoteLeft, FaStar } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
+import Marquee from 'react-fast-marquee';
 
 const Testimonials = () => {
   const darkMode = useSelector((state) => state.theme.darkMode);
-  
+
   const testimonials = [
     {
       quote: "The Code Sneakers team completely transformed our digital presence. Their technical expertise and creative approach helped us increase online sales by 300% within 6 months.",
@@ -49,8 +50,8 @@ const Testimonials = () => {
       <section className={`relative h-[80vh] flex items-center justify-center bg-gradient-to-br ${darkMode ? 'from-black via-[#0f0f0f] to-primary/20' : 'from-white via-transparent'} overflow-hidden`}>
         <div className="absolute inset-0 bg-[url('/Assets/noise.png')] opacity-20" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#3b82f620_0%,transparent_70%)] animate-pulse" />
-        
-        <motion.div 
+
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           className="max-w-screen-2xl mx-auto px-4 text-center relative z-10"
@@ -72,7 +73,7 @@ const Testimonials = () => {
       <div className={`relative py-20 ${darkMode ? 'bg-gradient-to-b from-[#0a0a0a] to-[#111111]' : 'bg-gradient-to-b from-white to-gray-200'}`}>
         <div className="max-w-screen-2xl mx-auto px-4 grid md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -91,7 +92,7 @@ const Testimonials = () => {
       <section className={`relative py-20 ${darkMode ? 'bg-gradient-to-b from-[#111111] to-[#0a0a0a]' : 'bg-gradient-to-b from-white to-gray-200'}`}>
         <div className="max-w-screen-2xl mx-auto px-4 grid md:grid-cols-2 gap-8">
           {testimonials.map((testimonial, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -102,7 +103,7 @@ const Testimonials = () => {
                 <FaQuoteLeft />
               </div>
               <p className="text-xl text-gray-500 mb-6 leading-relaxed">"{testimonial.quote}"</p>
-              
+
               <div className="flex items-center gap-4">
                 <div className="flex-1">
                   <h4 className="text-lg font-bold">{testimonial.author}</h4>
@@ -123,27 +124,42 @@ const Testimonials = () => {
       </section>
 
       {/* Client Logos */}
-      <div className={`relative py-20 ${darkMode ? 'bg-gradient-to-b from-[#0a0a0a] to-[#111111]' : 'bg-gradient-to-b from-white to-gray-200'}`}>
-        <div className="max-w-screen-2xl mx-auto px-4">
-          <h3 className="text-2xl text-center mb-12 text-gray-500">Trusted By Industry Leaders</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-70 hover:opacity-100 transition-opacity">
-            {[...Array(8)].map((_, index) => (
-              <motion.div 
-                key={index}
-                whileHover={{ scale: 1.05 }}
-                className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all"
-              >
-                <div className="h-16 w-48 bg-gray-800/50 rounded-xl animate-pulse" />
-              </motion.div>
-            ))}
-          </div>
+      <div className="text-center flex flex-col items-center mt-10 lg:mt-20 mb-10 lg:mb-20 px-4">
+        <h3 className="text-sm sm:text-base md:text-lg text-gray-500">
+          Trusted by leading organizations worldwide
+        </h3>
+
+        <div className="relative mt-8 md:mt-12 h-[100px] md:h-[150px] w-full max-w-6xl">
+          <Marquee className="h-full w-auto mx-auto overflow-hidden" direction="left" speed={100} delay={5}>
+            <div className="mx-8 md:mx-[60px]">
+              <img className="h-[30px] md:h-[70px]" src="https://cdn.prod.website-files.com/64105dfa8da6a9f617932c6c/65f84159c44b3a07dc2f6a19_cb234db4-c13a-49ef-91fc-72f139f5855a.svg" alt="Logo 1" />
+            </div>
+            <div className="mx-8 md:mx-[60px]">
+              <img className="h-[30px] md:h-[70px]" src="https://media.licdn.com/dms/image/v2/D560BAQEab38B14MY0Q/company-logo_200_200/company-logo_200_200/0/1710237168776/cloud_quest_tech_logo?e=2147483647&v=beta&t=eCwn7ODtCZTWtIK1yfNOdhAJXXEj5qDHkxEhMu1kdkY" alt="Logo 2" />
+            </div>
+            <div className="mx-8 md:mx-[60px]">
+              <img className="h-[30px] md:h-[70px]" src="https://d8it4huxumps7.cloudfront.net/uploads/images/150x150/uploadedManual-677cdcb49fb2a_images.jpg?d=200x200" alt="Logo 3" />
+            </div>
+            <div className="mx-8 md:mx-[60px]">
+              <img className="h-[30px] md:h-[70px]" src="https://ugc.production.linktr.ee/KocDYHZhRry1F1bitd2v_t21e93cQ4J6Zh4qZ?io=true&size=avatar-v3_0" alt="Logo 4" />
+            </div>
+            <div className="mx-8 md:mx-[60px]">
+              <img className="h-[30px] md:h-[70px]" src="https://logos-world.net/wp-content/uploads/2023/06/Havas-Logo.png" alt="Logo 5" />
+            </div>
+            <div className="mx-8 md:mx-[60px]">
+              <img className="h-[30px] md:h-[70px]" src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/6c/69/de/6c69de5a-b29a-e83c-beb0-660cecc9f682/App_Icon-marketing.lsr/1024x1024bb.jpg" alt="Logo 5" />
+            </div>
+  
+          </Marquee>
+          <div className="absolute top-0 left-0 w-1/4 md:w-1/2 h-full bg-gradient-to-r from-transparent to-transparent"></div>
+          <div className="absolute top-0 right-0 w-1/4 md:w-1/2 h-full bg-gradient-to-l from-transparent to-transparent"></div>
         </div>
       </div>
 
       {/* CTA Section */}
       <div className={`relative py-32 ${darkMode ? 'bg-gradient-to-r from-primary/20 to-cyan-400/10' : 'bg-gradient-to-r from-gray-200 to-gray-400'}`}>
         <div className="max-w-screen-xl mx-auto px-4 text-center">
-          <motion.div 
+          <motion.div
             className="space-y-8"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
