@@ -352,15 +352,15 @@ const Home = () => {
               linkedinLink: "https://www.linkedin.com/in/aman-gupta-a11a672ab/"
             },
             {
-              name: "Krish Bhardawaj",
+              name: "Krish Bharadwaj",
               role: "Founder & CEO",
-              experience: `Expert in crafting engaging and responsive UI using React.js. Focused on user experience and design consistency across projects.`,
+              experience: `At the helm of The Code Sneakers, I fuse vision with innovation. With expertise in Full Stack Development, AR/VR, and Game Dev, I lead a team passionate about engineering next-gen digital solutions. From immersive tech to scalable platforms, we build experiences that are bold, intuitive, and built to last. For me, it’s not just about code, it’s about pushing boundaries and helping brands thrive in the future of tech.`,
               image: "/Assets/team3.jpg",
-              expertise: ["React Ecosystem", "Performance Optimization", "WebGL"],
+              expertise: ["MERN", "Game Developer", "AR"],
               linkedinLink: "https://www.linkedin.com/in/krishbharadwaj23/"
             },
             {
-              name: "Vikash Shakaya",
+              name: "Vikash Shakya",
               role: "Founder & CEO",
               experience: `Vikash is a skilled MERN Stack Developer with 50+ projects built and 200+ students mentored. He combines technical expertise with creative problem-solving to deliver impactful web experiences and leads with a mission to make coding exciting and accessible for all.`,
               image: "/Assets/vikash.jpg",
