@@ -80,7 +80,7 @@ const Header = () => {
               aria-label="Toggle menu"
             >
               {isMenuOpen ? (
-                <FiX className={`w-6 h-6 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`} />
+               ''
               ) : (
                 <FiMenu className={`w-6 h-6 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`} />
               )}
