@@ -391,7 +391,7 @@ const Career = () => {
           </h2>
           <p className="text-gray-600 dark:text-gray-300 mb-8">
             Send your resume and portfolio to{' '}
-            <span className="text-cyan-500">careers@thecodesneaker.com</span>
+            <span className="text-cyan-500">thecodesneakers@gmail.com</span>
           </p>
           <motion.a
             href="mailto:thecodesneakers@gmail.com"
