@@ -394,7 +394,7 @@ const Career = () => {
             <span className="text-cyan-500">careers@thecodesneaker.com</span>
           </p>
           <motion.a
-            href="mailto:careers@thecodesneaker.com"
+            href="mailto:thecodesneakers@gmail.com"
             className="inline-block px-8 py-3 bg-primary text-white font-semibold rounded-full hover:bg-cyan-600 transition duration-300"
             whileHover={{ scale: 1.05 }}
           >
